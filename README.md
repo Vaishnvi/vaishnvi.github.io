@@ -1,1 +1,1 @@
-# vaishnavikhindkar.github.io
+# vaishnvi.github.io
