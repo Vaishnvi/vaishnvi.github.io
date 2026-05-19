@@ -3,276 +3,622 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Vaishnavi Khindkar</title>
-  <meta name="description" content="Vaishnavi Khindkar — MS Computer Vision student at Carnegie Mellon University working on computer vision, generative modeling, spatial intelligence, and embodied AI." />
+  <meta name="description" content="Vaishnavi Khindkar — MS Computer Vision student at Carnegie Mellon University working on generative modeling, computer vision, 3D/4D scene understanding, object-centric learning, and spatial intelligence." />
+
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <header class="site-header">
-    <nav class="nav">
-      <a href="#home" class="logo">Vaishnavi Khindkar</a>
-      <div class="nav-links">
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#service">Service</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-    <section id="home" class="hero section">
-      <div class="hero-text">
-        <p class="eyebrow">MS Computer Vision @ Carnegie Mellon University</p>
-        <h1>Curious about intelligence, in love with mathematics, and driven to solve problems that matter.</h1>
-        <p class="hero-subtitle">
-          I work at the intersection of computer vision, generative modeling, spatial intelligence,
-          and embodied AI. I am especially interested in building visual systems that understand
-          objects, motion, geometry, and structure in dynamic real-world scenes.
+  <main class="container">
+    <header class="top">
+      <section class="intro">
+        <h1>Vaishnavi Khindkar</h1>
+        <p class="role">
+          MS Computer Vision · Robotics Institute · Carnegie Mellon University
         </p>
-        <div class="hero-actions">
-          <a class="button primary" href="#research">View Research</a>
-          <a class="button secondary" href="Vaishnavi_Khindkar_CV.pdf" target="_blank">Download CV</a>
-        </div>
-      </div>
 
-      <aside class="profile-card">
-        <div class="photo-placeholder">
-          Add Photo
-        </div>
-        <h2>Vaishnavi Khindkar</h2>
-        <p>Master's Student, Computer Vision</p>
-        <p>Robotics Institute, Carnegie Mellon University</p>
-        <div class="social-links">
-          <a href="mailto:vkhindkar@gmail.com">Email</a>
-          <a href="https://www.linkedin.com/in/vaishnavi-khindkar/" target="_blank">LinkedIn</a>
-          <a href="https://github.com/vaishnvi" target="_blank">GitHub</a>
-          <a href="#" target="_blank">Scholar</a>
-        </div>
+        <p class="links">
+          <a href="mailto:vkhindkar@andrew.cmu.edu">Email</a> /
+          <a href="mailto:vkhindkar@gmail.com">Gmail</a> /
+          <a href="https://github.com/vaishnvi" target="_blank">GitHub</a> /
+          <a href="https://www.linkedin.com/in/vaishnavi-khindkar/" target="_blank">LinkedIn</a> /
+          <a href="https://scholar.google.com/citations?hl=en&user=X0FxJ0UAAAAJ" target="_blank">Google Scholar</a> /
+          <a href="https://www.semanticscholar.org/author/Vaishnavi-Khindkar/2137359155" target="_blank">Semantic Scholar</a> /
+          <a href="Vaishnavi_Khindkar_Resume.pdf" target="_blank">CV</a>
+        </p>
+
+        <p>
+          I am a Master's student in Computer Vision at
+          <a href="https://www.ri.cmu.edu/" target="_blank">Carnegie Mellon University</a>,
+          where I work on problems at the intersection of computer vision, generative modeling,
+          3D/4D scene understanding, and spatial intelligence.
+        </p>
+
+        <p>
+          I am driven by curiosity for research, an infinite love for mathematics, and the desire
+          to solve problems that can meaningfully improve the world. I am especially excited by
+          questions that combine mathematical depth with real-world impact: how machines understand
+          objects, motion, geometry, and structure; how generative models learn useful representations
+          of the physical world; and how intelligent systems can reason, adapt, and generalize.
+        </p>
+
+        <p>
+          Currently, I am a Machine Learning Engineering Intern at
+          <a href="https://sync.so/" target="_blank">Sync Labs</a>, working on applied video generative AI
+          and lip-sync pipelines. At CMU, I am exploring object-centric 4D scene understanding and
+          generative modeling ideas related to lifted representations, reward-tilted distributions,
+          and diffusion/flow-based sampling. Previously, I worked with
+          <a href="https://www.cs.cmu.edu/~ftorre/" target="_blank">Prof. Fernando De la Torre</a>
+          on using foundation generative models to diagnose and improve aerial-view object detectors.
+        </p>
+      </section>
+
+      <aside class="portrait">
+        <img src="Images/profile.jpg" alt="Vaishnavi Khindkar" onerror="this.style.display='none'; this.parentElement.classList.add('missing-photo'); this.parentElement.innerHTML='Photo';" />
       </aside>
-    </section>
+    </header>
 
-    <section class="section" id="about">
-      <h2>About</h2>
-      <p>
-        I am a Master's student in Computer Vision at Carnegie Mellon University, motivated by
-        curiosity-driven research, a deep love for mathematics, and the desire to solve meaningful
-        problems with real-world impact.
-      </p>
-      <p>
-        My research interests include diffusion and flow-based generative models, object-centric
-        learning, 3D/4D scene understanding, and world models for embodied AI. I am especially drawn
-        to problems that require both mathematical rigor and creative thinking: understanding objects,
-        motion, geometry, and structure in dynamic scenes; building generative models that capture
-        the underlying dynamics of the world; and developing intelligent systems that reason, adapt,
-        and generalize.
-      </p>
-    </section>
+    <nav class="nav">
+      <a href="#news">News</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#projects">Projects</a>
+      <a href="#blogs">Blogs</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#service">Service</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-    <section class="section" id="news">
+    <section id="news">
       <h2>News</h2>
-      <ul class="news-list">
-        <li><span>May 2026</span> Started as a Machine Learning Engineering Intern at Sync Labs.</li>
-        <li><span>Aug 2025</span> Started the MS in Computer Vision program at Carnegie Mellon University.</li>
-        <li><span>Oct 2024</span> Presented pedestrian intent reasoning work at IEEE IROS 2024.</li>
-        <li><span>Jan 2022</span> Presented domain adaptation work at IEEE/CVF WACV 2022.</li>
+      <ul class="news">
+        <li><span>May 2026</span> Started as a Machine Learning Engineering Intern at Sync Labs, working on applied video generative AI and lip-sync pipelines.</li>
+        <li><span>Spring 2026</span> Began exploratory research with <a href="https://www.andrejristeski.org/" target="_blank">Prof. Andrej Risteski</a> on diffusion/flow-based sampling, lifted representations, and reward-tilted distributions.</li>
+        <li><span>Spring 2026</span> Working on Slot4D, an object-centric 4D scene understanding project at CMU.</li>
+        <li><span>Aug 2025</span> Started the MS in Computer Vision program at Carnegie Mellon University, Robotics Institute.</li>
+        <li><span>Oct 2024</span> Presented our work on pedestrian intent reasoning at IEEE/RSJ IROS 2024 in Abu Dhabi.</li>
+        <li><span>Jun 2024</span> Our paper “Can Reasons Help Improve Pedestrian Intent Estimation? A Cross-Modal Approach” was accepted at IROS 2024.</li>
+        <li><span>Apr 2023</span> Filed U.S. patent on detecting objects in adaptive environments using machine learning models.</li>
+        <li><span>Jan 2022</span> Presented our work on residual self-attentive feature alignment at IEEE/CVF WACV 2022.</li>
       </ul>
     </section>
 
-    <section class="section" id="research">
+    <section id="research">
       <h2>Research Interests</h2>
-      <div class="tags">
-        <span>Generative Modeling</span>
-        <span>Diffusion & Flows</span>
-        <span>3D/4D Vision</span>
-        <span>Object-Centric Learning</span>
-        <span>Spatial Intelligence</span>
-        <span>Embodied AI</span>
-        <span>Autonomous Driving</span>
-        <span>Domain Adaptation</span>
-      </div>
+      <p>
+        My long-term research goal is to build visual intelligence systems that understand and reason
+        about the physical world. I am broadly interested in methods that connect mathematical
+        structure, generative modeling, and real-world perception.
+      </p>
 
-      <div class="grid two-col">
-        <article class="card">
-          <h3>Object-Centric 4D Scene Understanding</h3>
-          <p>
-            Exploring slot-based representations over frozen geometric backbones for dynamic
-            multi-view scenes. The goal is to bridge low-level geometric tracking with high-level
-            object-level understanding.
-          </p>
-        </article>
+      <ul>
+        <li>Diffusion models, flow matching, score-based models, and generative modeling theory</li>
+        <li>Lifted representations, tilted distributions, and controllable sampling</li>
+        <li>Object-centric learning and structured visual representations</li>
+        <li>3D/4D reconstruction, dynamic scene understanding, and spatial intelligence</li>
+        <li>World models, embodied AI, and robotics perception</li>
+        <li>Autonomous driving perception, pedestrian intent prediction, and domain adaptation</li>
+      </ul>
 
-        <article class="card">
-          <h3>Diffusion, Flows, and Lifted Representations</h3>
-          <p>
-            Studying generative modeling methods for tilted distributions, lifted feature spaces,
-            reward-conditioned sampling, and structured representations for controllable generation.
-          </p>
-        </article>
+      <h3>Current Research Directions</h3>
 
-        <article class="card">
-          <h3>Generative AI for Aerial Perception</h3>
-          <p>
-            Using foundation generative models to create controlled synthetic datasets for diagnosing
-            failure modes in aerial-view object detectors.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Autonomous Driving & Intent Reasoning</h3>
-          <p>
-            Prior work on pedestrian intent prediction, visual reasoning, domain-adaptive object
-            detection, and robust perception for autonomous systems.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="publications">
-      <h2>Publications & Patents</h2>
-      <div class="publication">
-        <h3>Can Reasons Help Improve Pedestrian Intent Estimation? A Cross-Modal Approach</h3>
-        <p>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2024.</p>
-        <p class="links"><a href="#">Paper</a> · <a href="#">Code</a> · <a href="#">Project</a></p>
-      </div>
-
-      <div class="publication">
-        <h3>To Miss-Attend Is to Misalign! Residual Self-Attentive Feature Alignment for Adapting Object Detectors</h3>
-        <p>IEEE/CVF Winter Conference on Applications of Computer Vision (WACV), 2022.</p>
-        <p class="links"><a href="#">Paper</a> · <a href="#">Code</a> · <a href="#">Project</a></p>
-      </div>
-
-      <div class="publication">
-        <h3>Patents</h3>
+      <article class="entry">
+        <h4>Object-Centric 4D Scene Understanding</h4>
         <p>
-          Filed patents related to adaptive object detection and underwater debris detection using
-          machine learning models. Add patent numbers/links here once finalized.
+          I am working on object-centric 4D reconstruction, exploring how slot-based representations
+          can be combined with frozen geometric backbones to bridge low-level geometric tracking with
+          high-level object-level scene understanding. The broader motivation is to learn structured
+          scene representations that preserve object identity, motion, and geometry across time.
         </p>
-      </div>
+      </article>
+
+      <article class="entry">
+        <h4>Generative Modeling and Lifted Representations</h4>
+        <p>
+          I am exploring diffusion/flow-based sampling ideas for reward-tilted distributions and lifted
+          data representations. The core question is whether augmenting data with structured auxiliary
+          variables can make difficult tilted sampling problems more tractable, controllable, and
+          interpretable.
+        </p>
+      </article>
+
+      <article class="entry">
+        <h4>Generative AI for Aerial Perception</h4>
+        <p>
+          I worked with Prof. Fernando De la Torre on using foundation generative models to diagnose
+          and improve aerial-view object detectors. The project studies how controlled synthetic
+          generation can expose systematic detector failures across attributes such as object scale,
+          viewpoint, background, occlusion, and appearance.
+        </p>
+      </article>
     </section>
 
-    <section class="section" id="experience">
+    <section id="publications">
+      <h2>Publications</h2>
+
+      <article class="publication">
+        <div class="thumb">
+          <img src="Images/mindread.jpg" alt="MINDREAD thumbnail" onerror="this.style.display='none'; this.parentElement.classList.add('missing-thumb'); this.parentElement.innerHTML='MINDREAD';" />
+        </div>
+        <div class="pub-text">
+          <h3>Can Reasons Help Improve Pedestrian Intent Estimation? A Cross-Modal Approach</h3>
+          <p class="authors">
+            <strong>Vaishnavi Khindkar</strong>, Vineeth N. Balasubramanian, Chetan Arora,
+            Anbumani Subramanian, C. V. Jawahar
+          </p>
+          <p class="venue">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2024</p>
+          <p>
+            We introduce a reason-enriched pedestrian intent prediction setting and propose MINDREAD,
+            a cross-modal representation learning framework that predicts both pedestrian intent and
+            human-understandable reasons. The project studies whether predicting the “why” can improve
+            prediction of the “what” in autonomous driving scenarios.
+          </p>
+          <p class="pub-links">
+            <a href="https://arxiv.org/abs/2411.13302" target="_blank">[arXiv]</a>
+            <a href="https://arxiv.org/pdf/2411.13302" target="_blank">[PDF]</a>
+            <a href="https://github.com/Vaishnvi/MindRead_PIP" target="_blank">[dataset/code]</a>
+            <a href="https://drive.google.com/file/d/1dUXsWc1RSUt869FA5SxCO9NKh2udiS2D/view?usp=sharing" target="_blank">[talk]</a>
+            <a href="https://docs.google.com/presentation/d/1ji-Ibjx1E9CWN1SRykB16G0943ZITas8mvt6Jeuy7pY/edit?usp=sharing" target="_blank">[poster]</a>
+            <a href="https://docs.google.com/presentation/d/1SnMTcl4fXXl4th5M68IGkscUyqJRLebCcRyZyW5LF0A/edit?usp=sharing" target="_blank">[graphical abstract]</a>
+          </p>
+        </div>
+      </article>
+
+      <article class="publication">
+        <div class="thumb">
+          <img src="Images/illume.jpg" alt="ILLUME thumbnail" onerror="this.style.display='none'; this.parentElement.classList.add('missing-thumb'); this.parentElement.innerHTML='ILLUME';" />
+        </div>
+        <div class="pub-text">
+          <h3>To Miss-Attend Is to Misalign! Residual Self-Attentive Feature Alignment for Adapting Object Detectors</h3>
+          <p class="authors">
+            <strong>Vaishnavi Khindkar</strong>, Vineeth N. Balasubramanian, Chetan Arora,
+            Anbumani Subramanian, Rohit Saluja, C. V. Jawahar
+          </p>
+          <p class="venue">IEEE/CVF Winter Conference on Applications of Computer Vision (WACV), 2022</p>
+          <p>
+            We propose ILLUME, a residual self-attentive feature alignment method for adapting object
+            detectors under domain shift. The method uses instance-aware feature enhancement to reduce
+            feature misalignment and improve robustness across visual domains such as weather and
+            style shifts.
+          </p>
+          <p class="pub-links">
+            <a href="https://openaccess.thecvf.com/content/WACV2022/html/Khindkar_To_Miss-Attend_Is_to_Misalign_Residual_Self-Attentive_Feature_Alignment_for_WACV_2022_paper.html" target="_blank">[CVF]</a>
+            <a href="https://openaccess.thecvf.com/content/WACV2022/papers/Khindkar_To_Miss-Attend_Is_to_Misalign_Residual_Self-Attentive_Feature_Alignment_for_WACV_2022_paper.pdf" target="_blank">[PDF]</a>
+            <a href="https://github.com/Vaishnvi/ILLUME" target="_blank">[code]</a>
+            <a href="https://www.youtube.com/watch?v=sbUWeQJ3lys" target="_blank">[talk]</a>
+            <a href="https://docs.google.com/presentation/d/1S0Ei25aynJETC15JXNUsN_vqxQG_izMR4h-G5N1Qu1w/edit?usp=sharing" target="_blank">[poster]</a>
+            <a href="https://openaccess.thecvf.com/content/WACV2022/supplemental/Khindkar_To_Miss-Attend_Is_WACV_2022_supplemental.pdf" target="_blank">[supplementary]</a>
+          </p>
+        </div>
+      </article>
+
+      <article class="publication">
+        <div class="thumb">
+          <img src="Images/gamma.jpg" alt="GAMMA thumbnail" onerror="this.style.display='none'; this.parentElement.classList.add('missing-thumb'); this.parentElement.innerHTML='GAMMA';" />
+        </div>
+        <div class="pub-text">
+          <h3>GAMMA: Generative Augmentation for Attentive Marine Debris Detection</h3>
+          <p class="authors"><strong>Vaishnavi Khindkar</strong>, Janhavi Khindkar</p>
+          <p class="venue">arXiv preprint</p>
+          <p>
+            We study generative augmentation for underwater debris detection by translating abundant
+            in-air plastic imagery into underwater-style images using CycleGAN-style augmentation,
+            with the goal of improving marine debris detection under limited underwater data.
+          </p>
+          <p class="pub-links">
+            <a href="https://arxiv.org/abs/2212.03759" target="_blank">[arXiv]</a>
+            <a href="https://arxiv.org/pdf/2212.03759" target="_blank">[PDF]</a>
+            <a href="https://github.com/Vaishnvi/GAMMA" target="_blank">[code]</a>
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <section id="projects">
+      <h2>Selected Projects</h2>
+
+      <article class="project-card">
+        <h3>Slot4D: Learning Object Slots for 4D Reconstruction</h3>
+        <p class="meta">CMU Capstone · Advisor: Prof. László A. Jeni</p>
+        <p>
+          Slot4D explores whether object-centric representations can improve dynamic 4D scene
+          understanding. The project builds a pipeline that decomposes multi-view video into
+          per-object latent slots, with the goal of connecting high-level object structure to low-level
+          geometry, motion, and tracking.
+        </p>
+        <p>
+          I am implementing a Slot Attention-style adapter over frozen geometric backbones. The model
+          groups scene evidence using visual features, predicted geometry, and motion cues, and learns
+          slots that ideally correspond to coherent objects across frames and views. The larger goal is
+          to make 4D reconstruction more interpretable and object-aware, rather than treating the scene
+          as only a collection of low-level points or pixels.
+        </p>
+        <ul>
+          <li>Object-centric learning for dynamic multi-view 4D reconstruction.</li>
+          <li>Slot Attention-style grouping over visual and geometric representations.</li>
+          <li>Experiments with frozen geometric backbones, slot supervision, and geometric consistency.</li>
+          <li>Long-term motivation: structured world representations for embodied AI and spatial intelligence.</li>
+        </ul>
+      </article>
+
+      <article class="project-card">
+        <h3>Cross-Resolution Gaussian Splatting for Hybrid Resolution Photography</h3>
+        <p class="meta">CMU Project · Advisor: Prof. Shubham Tulsiani</p>
+        <p>
+          This project studies 3D Gaussian Splatting in settings where the available images have
+          heterogeneous resolutions. In real capture pipelines, not every viewpoint is equally sharp or
+          high-resolution; a reconstruction model may need to combine low-resolution context with a
+          smaller set of high-resolution images.
+        </p>
+        <p>
+          I designed a cross-resolution Gaussian Splatting pipeline that fuses heterogeneous image
+          sources while preserving fine detail where high-resolution observations are available. The
+          project explores detail-preserving densification and training strategies for high-fidelity
+          reconstruction under mixed-resolution supervision.
+        </p>
+        <ul>
+          <li>Hybrid-resolution 3D Gaussian Splatting pipeline.</li>
+          <li>Fusion of heterogeneous image sources for 3D reconstruction.</li>
+          <li>Detail-preserving densification for sharper geometry and appearance.</li>
+          <li>Research direction connected to efficient 3D representation learning.</li>
+        </ul>
+      </article>
+
+      <article class="project-card">
+        <h3>Generalizable Single-View Holistic Robot Pose Estimation</h3>
+        <p class="meta">CMU Project · Advisor: Prof. Jun-Yan Zhu</p>
+        <p>
+          This project focuses on estimating robot pose and keypoints from a single RGB/depth
+          observation, with an emphasis on generalizing to unseen robot types. The motivation is to
+          build perception systems that can understand articulated robot structure without requiring
+          extensive real-world annotations for every new robot platform.
+        </p>
+        <p>
+          I designed a single-view robot pose and keypoint estimation pipeline using synthetic data,
+          domain randomization, and synthetic-to-real transfer. The project combines pose estimation,
+          keypoint prediction, and generalization across morphology, connecting computer vision with
+          robotics perception.
+        </p>
+        <ul>
+          <li>Single-view holistic robot pose and keypoint estimation.</li>
+          <li>Synthetic-to-real transfer using domain randomization.</li>
+          <li>Generalization to unseen robot types and articulated structures.</li>
+          <li>Research direction connected to robotics perception and embodied AI.</li>
+        </ul>
+      </article>
+
+      <article class="project-card">
+        <h3>Generative Scene Forecasting for SLAM</h3>
+        <p class="meta">CMU 16-833 Robot Localization and Mapping · Course Project</p>
+        <p>
+          This project investigates whether generative or predictive scene models can help SLAM under
+          temporally sparse sensing. Traditional scan registration can fail when inter-frame motion is
+          large, observations are missing, or dynamic objects violate static-scene assumptions.
+        </p>
+        <p>
+          The central idea is to project sparse 3D LiDAR point clouds into structured representations,
+          predict future scene geometry or scene flow, and use the predicted point cloud as a prior for
+          registration. We studied skipped-frame settings and model-assisted ICP-style alignment to
+          understand when learned prediction can make localization and mapping more robust.
+        </p>
+        <ul>
+          <li>Predictive scene priors for temporally sparse SLAM.</li>
+          <li>Skipped-frame registration experiments with ICP-style alignment.</li>
+          <li>Connection between classical geometry pipelines and learned generative forecasting.</li>
+        </ul>
+      </article>
+
+      <article class="project-card">
+        <h3>Action Abstractions and Generalization in Robotic Manipulation</h3>
+        <p class="meta">CMU 16-831 Introduction to Robot Learning · Course Project</p>
+        <p>
+          This project studies how algorithm choice, action representation, and training distribution
+          affect reinforcement learning in robotic manipulation. We compare on-policy, off-policy, and
+          model-based approaches across manipulation tasks, with an emphasis on how different action
+          abstractions change learning efficiency and generalization.
+        </p>
+        <p>
+          The project evaluates PPO, SAC, and a simplified model-based RL/MPC-style baseline under
+          different control spaces and task settings. The broader question is how to choose action
+          representations that make robotic learning more stable, data-efficient, and transferable.
+        </p>
+        <ul>
+          <li>Empirical comparison of PPO, SAC, and model-based control.</li>
+          <li>Study of end-effector vs. joint-space action abstractions.</li>
+          <li>Manipulation tasks including reaching, pushing, and pick-and-place variants.</li>
+          <li>Focus on generalization, training distribution, and failure analysis.</li>
+        </ul>
+      </article>
+
+      <article class="project-card">
+        <h3>Multi-class Image Classification on UC Merced Land Use Dataset</h3>
+        <p class="meta">Remote Sensing · Computer Vision</p>
+        <p>
+          This project focuses on land-use classification from remote-sensing imagery. I built a fusion
+          model that combines spatial CNN features with handcrafted frequency/texture features such as
+          DCT and LBP-style representations to improve classification accuracy on the UC Merced Land
+          Use Dataset.
+        </p>
+        <p class="pub-links">
+          <a href="https://github.com/Vaishnvi/Multiclass-Image-classication-on-UC-Merced-LandUse-Dataset-" target="_blank">[code]</a>
+        </p>
+      </article>
+
+      <article class="project-card">
+        <h3>Aspect-Based Sentiment Analysis on NPS Survey Data for Retail Online Banking</h3>
+        <p class="meta">Industry Project · Barclays</p>
+        <p>
+          I implemented aspect-based sentiment analysis on Net Promoter Score survey data for an
+          online banking platform. The goal was to identify which product features, such as payments
+          or homepage experience, were associated with positive or negative customer feedback.
+        </p>
+        <p>
+          I also built an AngularJS dashboard to visualize customer sentiment across product features,
+          helping stakeholders understand where improvements were most needed.
+        </p>
+      </article>
+
+      <article class="project-card">
+        <h3>GEEK QUIZ</h3>
+        <p class="meta">Educational Software Project</p>
+        <p>
+          GEEK QUIZ is a user-friendly techno-quiz application designed to help users analyze and
+          improve their technical knowledge. The application has three levels: Computer World Tycoons,
+          Programming Basics, and Bugzzz, where users progress after earning a badge for each level.
+        </p>
+        <p class="pub-links">
+          <a href="https://github.com/Vaishnvi/GEEK-QUIZ" target="_blank">[code]</a>
+        </p>
+      </article>
+
+      <article class="project-card">
+        <h3>Loan Application</h3>
+        <p class="meta">Android Application</p>
+        <p>
+          This Android application tracks loan collections and daily repayment workflows. The system
+          includes separate owner and employee applications: the owner can add employees, assign loan
+          accounts, and maintain transaction history, while employees receive daily randomized account
+          assignments for collection.
+        </p>
+        <p>
+          The application uses realtime database updates to reduce paperwork and make loan collection
+          tracking more systematic.
+        </p>
+        <p class="pub-links">
+          <a href="https://github.com/Vaishnvi/Loan-Application" target="_blank">[code]</a>
+        </p>
+      </article>
+
+      <article class="project-card">
+        <h3>NGO Helper Application</h3>
+        <p class="meta">Android Application · Social Impact</p>
+        <p>
+          NGO Helper is an Android application that helps users discover nearby NGOs and learn how they
+          can contribute through donations, birthday celebrations, or other activities. The motivation
+          was to make it easier for people to connect with local organizations and contribute to social
+          good.
+        </p>
+        <p class="pub-links">
+          <a href="https://github.com/Vaishnvi/NGO-Helper-App" target="_blank">[code]</a>
+        </p>
+      </article>
+
+      <article class="project-card">
+        <h3>Movie Ratings Analyser</h3>
+        <p class="meta">Desktop Application · QtCreator + MySQL</p>
+        <p>
+          This project analyzes movie ratings using QtCreator and MySQL. Users can submit ratings and
+          comments for movies from different years, and the application dynamically updates aggregate
+          ratings based on user feedback.
+        </p>
+        <p class="pub-links">
+          <a href="https://github.com/Vaishnvi/Movie-Ratings-Analyser" target="_blank">[code]</a>
+        </p>
+      </article>
+    </section>
+
+    <section id="blogs">
+      <h2>Blogs & Resources</h2>
+
+      <article class="blog-card">
+        <h3>How I Got Into CMU’s MSCV Program: My SOP + Application Tips</h3>
+        <p class="meta">Medium · May 2025</p>
+        <p>
+          A reflective post about my CMU MSCV application journey, including SOP structure, research
+          positioning, application strategy, and lessons learned while applying to research-oriented
+          computer vision and robotics programs.
+        </p>
+        <p class="pub-links">
+          <a href="https://medium.com/@vkhindkar/how-i-got-into-cmus-mscv-program-my-sop-application-tips-a5d4eb98d548" target="_blank">[read]</a>
+        </p>
+      </article>
+
+      <article class="blog-card">
+        <h3>How to Plan for a Research-Based Master’s Program</h3>
+        <p class="meta">Medium · April 2025</p>
+        <p>
+          A practical guide for students planning research-based master’s applications, covering how
+          to identify research interests, study faculty/lab fit, organize SOP planning, and build a
+          focused application narrative.
+        </p>
+        <p class="pub-links">
+          <a href="https://medium.com/@vkhindkar/how-to-plan-for-a-research-based-masters-b7bcda8160a2" target="_blank">[read]</a>
+        </p>
+      </article>
+    </section>
+
+    <section id="patents">
+      <h2>Patents</h2>
+
+      <article class="entry">
+        <h3>System and method for detecting object in an adaptive environment using a machine learning model</h3>
+        <p class="meta">
+          U.S. Patent Application US20230368498A1 · Application No. US 18/197,075
+        </p>
+        <p>
+          Inventors: Vaishnavi Mohan Khindkar, Vineeth N. Balasubramanian, Chetan Arora,
+          Rohit Saluja, C. V. Jawahar.
+        </p>
+        <p class="pub-links">
+          <a href="https://patents.google.com/patent/US20230368498A1/en" target="_blank">[patent]</a>
+          <a href="https://patentimages.storage.googleapis.com/0e/97/d7/37773b47c42d2c/US20230368498A1.pdf" target="_blank">[pdf]</a>
+        </p>
+      </article>
+
+      <article class="entry">
+        <h3>Underwater debris detection using machine learning and generative augmentation</h3>
+        <p class="meta">Indian Patent No. 202021028978</p>
+        <p>
+          Architecture for underwater plastic detection and cleaning using an Autonomous Underwater
+          Vehicle (AUV) and CycleGAN-based data augmentation to translate in-air plastic images to
+          underwater-style images.
+        </p>
+      </article>
+    </section>
+
+    <section id="experience">
       <h2>Experience</h2>
 
-      <div class="timeline-item">
-        <div class="timeline-date">May 2026 – Present</div>
-        <div>
-          <h3>Machine Learning Engineering Intern — Sync Labs</h3>
-          <p>
-            Working on applied video generative AI and lip-sync pipelines, including shot-level
-            video/audio processing, multilingual dubbing workflows, scalable inference, and
-            production video editing systems.
-          </p>
-        </div>
-      </div>
+      <article class="entry">
+        <h3>Machine Learning Engineering Intern · Sync Labs</h3>
+        <p class="meta">Summer 2026 · California</p>
+        <ul>
+          <li>Working on applied video generative AI and lip-sync pipelines for production video editing workflows.</li>
+          <li>Building shot-level video/audio processing workflows, including shot detection, multilingual audio segmentation, and S3-based asset organization.</li>
+          <li>Working with multilingual dubbing and lip-sync workflows, including Spanish and French audio/video alignment.</li>
+          <li>Integrating model inference scripts, cloud storage, and output management for scalable video generation systems.</li>
+        </ul>
+      </article>
 
-      <div class="timeline-item">
-        <div class="timeline-date">2026 – Present</div>
-        <div>
-          <h3>Research Collaboration — Generative Modeling</h3>
-          <p>
-            Exploring diffusion/flow-based sampling, lifted data representations, reward-tilted
-            distributions, and structured generative modeling.
-          </p>
-        </div>
-      </div>
+      <article class="entry">
+        <h3>Research Collaboration · Generative Modeling</h3>
+        <p class="meta">Carnegie Mellon University · Prof. Andrej Risteski · 2026–Present</p>
+        <ul>
+          <li>Exploring diffusion/flow-based sampling methods for reward-tilted distributions.</li>
+          <li>Studying lift-and-tilt constructions that express quadratic reward tilts using auxiliary lifted variables.</li>
+          <li>Running toy experiments on synthetic distributions to analyze lifted-variable noise, likelihood, and clean-slice behavior.</li>
+          <li>Investigating connections between score models, flow matching, tilted distributions, and structured sampling.</li>
+        </ul>
+      </article>
 
-      <div class="timeline-item">
-        <div class="timeline-date">2025 – Present</div>
-        <div>
-          <h3>Research Assistant — Carnegie Mellon University</h3>
-          <p>
-            Working on object-centric 4D reconstruction and visual-geometric representations for
-            dynamic scene understanding.
-          </p>
-        </div>
-      </div>
+      <article class="entry">
+        <h3>Research Assistant · Carnegie Mellon University</h3>
+        <p class="meta">Object-Centric 4D Scene Understanding · 2025–Present</p>
+        <ul>
+          <li>Working on Slot4D, an object-centric 4D reconstruction project for dynamic multi-view scenes.</li>
+          <li>Exploring Slot Attention-style grouping over visual and geometric features from frozen geometric backbones.</li>
+          <li>Studying how object slots can improve interpretability, tracking, and scene-level structure in 4D reconstruction.</li>
+        </ul>
+      </article>
 
-      <div class="timeline-item">
-        <div class="timeline-date">2025</div>
-        <div>
-          <h3>Research Assistant — Carnegie Mellon University</h3>
-          <p>
-            Worked with Prof. Fernando De la Torre on using foundation generative models to diagnose
-            and improve aerial-view object detectors through controlled synthetic data generation.
-          </p>
-        </div>
-      </div>
+      <article class="entry">
+        <h3>Research Assistant · Carnegie Mellon University</h3>
+        <p class="meta">Advisor: Prof. Fernando De la Torre · 2025</p>
+        <ul>
+          <li>Worked on using foundation generative models to diagnose and improve aerial-view object detectors.</li>
+          <li>Designed controlled synthetic data generation workflows for analyzing detector failures under attribute changes.</li>
+          <li>Studied detector behavior across variations in object scale, viewpoint, background, occlusion, and visual appearance.</li>
+        </ul>
+      </article>
 
-      <div class="timeline-item">
-        <div class="timeline-date">2020 – 2024</div>
-        <div>
-          <h3>Junior Research Scientist — CVIT, IIIT Hyderabad</h3>
-          <p>
-            Worked on autonomous driving perception, pedestrian intent prediction, domain adaptation,
-            object detection, and multimodal reasoning, resulting in publications at IROS and WACV.
-          </p>
-        </div>
-      </div>
+      <article class="entry">
+        <h3>Applied AI Researcher · Product Labs, IIIT Hyderabad</h3>
+        <p class="meta">Oct 2024–Jul 2025 · Hyderabad, India</p>
+        <ul>
+          <li>Containerized OCR models with Docker and deployed models via NVIDIA Triton for real-time inference.</li>
+          <li>Worked on OCR model optimization across 22 Indian languages for Bhashini-related government-facing applications.</li>
+          <li>Contributed to full-stack AI product development using React and Node.js.</li>
+        </ul>
+      </article>
 
-      <div class="timeline-item">
-        <div class="timeline-date">2018 – 2020</div>
-        <div>
-          <h3>Software Developer — Barclays</h3>
-          <p>
-            Built backend and frontend systems using enterprise software engineering practices.
-          </p>
-        </div>
-      </div>
+      <article class="entry">
+        <h3>Junior Research Scientist · CVIT, IIIT Hyderabad</h3>
+        <p class="meta">Aug 2020–Sep 2024 · Hyderabad, India</p>
+        <ul>
+          <li>Worked on autonomous driving perception, pedestrian intent prediction, domain-adaptive object detection, and multimodal reasoning.</li>
+          <li>Collaborated with Prof. C. V. Jawahar, Prof. Vineeth N. Balasubramanian, and Prof. Chetan Arora.</li>
+          <li>Led and contributed to research resulting in publications at IROS 2024 and WACV 2022, along with patent filings.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h3>Software Developer · Barclays</h3>
+        <p class="meta">Aug 2018–Oct 2020 · Pune, India</p>
+        <ul>
+          <li>Built backend and frontend systems in an enterprise software engineering environment.</li>
+          <li>Developed applications using Spring Boot and AngularJS.</li>
+        </ul>
+      </article>
     </section>
 
-    <section class="section" id="projects">
-      <h2>Selected Projects</h2>
-      <div class="grid two-col">
-        <article class="card">
-          <h3>Slot4D: Object-Centric 4D Reconstruction</h3>
-          <p>Slot Attention adapters over geometric backbones for object-level dynamic scene understanding.</p>
-        </article>
+    <section id="education">
+      <h2>Education</h2>
 
-        <article class="card">
-          <h3>Generative Scene Forecasting for SLAM</h3>
-          <p>Exploring predictive scene priors for registration under sparse or skipped-frame observations.</p>
-        </article>
+      <article class="entry">
+        <h3>Carnegie Mellon University</h3>
+        <p class="meta">Master of Science in Computer Vision · Robotics Institute, School of Computer Science · Aug 2025–Dec 2026</p>
+        <p>
+          GPA: 3.9/4.0. Relevant coursework: Advanced Computer Vision (16-820), Learning for 3D Vision
+          (16-825), Visual Learning and Recognition (16-824), Generative AI (10-623), Introduction to
+          Robot Learning (16-831), Robot Localization and Mapping, and related graduate-level courses.
+        </p>
+      </article>
 
-        <article class="card">
-          <h3>Action Abstractions in Robotic Manipulation</h3>
-          <p>Studying PPO, SAC, and model-based RL under different action representations and task distributions.</p>
-        </article>
-
-        <article class="card">
-          <h3>Cross-Resolution Gaussian Splatting</h3>
-          <p>Resolution-aware training for 3D Gaussian Splatting in hybrid-resolution settings.</p>
-        </article>
-      </div>
+      <article class="entry">
+        <h3>Savitribai Phule Pune University</h3>
+        <p class="meta">Bachelor's degree in Computer Science and Engineering · 2015–2018</p>
+        <p>
+          Undergraduate studies in computer science and engineering, including programming, algorithms,
+          databases, software engineering, and early computer vision / IoT projects.
+        </p>
+      </article>
     </section>
 
-    <section class="section" id="service">
-      <h2>Service & Mentorship</h2>
+    <section id="service">
+      <h2>Academic Service & Mentorship</h2>
       <ul>
-        <li>Reviewer for computer vision conferences including WACV, ECCV, and CVPR.</li>
-        <li>Portfolio Project Mentor for AI4ALL Changemakers in AI.</li>
-        <li>Organized Hour of Code sessions to teach coding and algorithmic thinking to students.</li>
+        <li>Reviewer for CVPR 2025, CVPR 2023, ECCV 2022, and WACV 2022.</li>
+        <li>Portfolio Project Mentor for the Changemakers in AI program at AI4ALL, USA.</li>
+        <li>Taught tutorials on computer vision in IISc–TalentSprint Executive M.Tech. programs in Deep Learning.</li>
+        <li>Organized Hour of Code sessions to teach school students coding and algorithmic thinking through simple games.</li>
+        <li>Interviewed students for research scholar positions at CVIT, IIIT Hyderabad.</li>
       </ul>
     </section>
 
-    <section class="section" id="contact">
+    <section id="achievements">
+      <h2>Selected Achievements</h2>
+      <ul>
+        <li>Published research at IROS 2024 and WACV 2022.</li>
+        <li>Filed one U.S. patent and Indian patent filings related to computer vision and machine learning.</li>
+        <li>Selected as AI4ALL Portfolio Project Mentor for Changemakers in AI.</li>
+        <li>Completed Stanford Machine Learning certificate on Coursera with a 96.5% grade.</li>
+        <li>Qualified Google Code Jam Round 1.</li>
+        <li>Semi-finalist in TCS CodeVita 2017.</li>
+        <li>Runner-up in Just Coding competition at ACM-W during APCWIC.</li>
+        <li>Secured 1st position in BE-C Hackerrank contest.</li>
+        <li>International Olympiad of Mathematics: 1st in class and state rank 275.</li>
+      </ul>
+    </section>
+
+    <section id="contact">
       <h2>Contact</h2>
       <p>
         I am always happy to connect about research, generative models, computer vision, robotics,
-        or meaningful collaborations.
+        spatial intelligence, or meaningful collaborations.
       </p>
       <p>
-        Email: <a href="mailto:vkhindkar@gmail.com">vkhindkar@gmail.com</a><br />
-        GitHub: <a href="https://github.com/vaishnvi" target="_blank">github.com/vaishnvi</a><br />
-        LinkedIn: <a href="https://www.linkedin.com/in/vaishnavi-khindkar/" target="_blank">linkedin.com/in/vaishnavi-khindkar</a>
+        Email: <a href="mailto:vkhindkar@andrew.cmu.edu">vkhindkar@andrew.cmu.edu</a> /
+        <a href="mailto:vkhindkar@gmail.com">vkhindkar@gmail.com</a>
       </p>
     </section>
-  </main>
 
-  <footer>
-    <p>© 2026 Vaishnavi Khindkar. Built with GitHub Pages.</p>
-  </footer>
+    <footer>
+      <p>Last updated: May 2026.</p>
+    </footer>
+  </main>
 </body>
 </html>
