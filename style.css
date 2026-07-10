@@ -99,7 +99,7 @@ section { padding: 40px 0 4px; }
 .intro { padding-top: 52px; }
 .intro::after { content: ""; display: block; clear: both; }
 .intro-photo {
-  float: right; width: 300px; margin: 6px 0 24px 56px; text-align: center;
+  float: right; width: 260px; margin: 6px 0 24px 56px; text-align: center;
 }
 .intro h1, .hero h1 {
   font-family: "Fraunces", Georgia, serif;
@@ -118,8 +118,8 @@ section { padding: 40px 0 4px; }
 .intro .affil-sub:first-of-type { margin-top: 8px; }
 .intro .affil-sub a { font-weight: 500; }
 .hero-photo {
-  flex: 0 0 auto; width: 100%; height: auto; border-radius: 14px;
-  object-fit: contain; border: 1px solid var(--border);
+  flex: 0 0 auto; width: 230px; height: 230px; border-radius: 50%;
+  object-fit: cover; object-position: 58% 40%; border: 1px solid var(--border);
 }
 .photo-contact { margin-top: 16px; text-align: center; }
 .intro-photo .email-line {
@@ -396,7 +396,7 @@ footer .socials { justify-content: center; margin-top: 16px; }
   .nav-burger { display: block; }
   .nav-extra { display: flex; align-items: center; gap: 10px; }
   .intro-photo { float: none; width: 100%; margin: 0 0 22px; }
-  .hero-photo { width: 100%; height: auto; }
+  .hero-photo { width: 200px; height: 200px; }
   .cards, .grid-2, .lenses { grid-template-columns: 1fr; }
   .pub { flex-direction: column; gap: 14px; }
   .pub-badge { flex: 0 0 auto; width: 100%; height: auto; flex-direction: row; gap: 10px; padding: 10px 14px; }
