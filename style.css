@@ -302,19 +302,6 @@ section { padding: 40px 0 4px; }
 .tl-date { font-size: .82rem; color: var(--text-mute); font-weight: 500; white-space: nowrap; }
 .tl-org { font-size: .92rem; color: var(--accent); font-weight: 500; margin: 1px 0 5px; }
 .tl-desc { font-size: .92rem; color: var(--text-soft); margin: 0; }
-.tl-list {
-  list-style: none; margin: 8px 0 0; padding: 0;
-  font-size: .92rem; color: var(--text-soft);
-}
-.tl-list li {
-  position: relative; padding-left: 16px; margin-bottom: 7px;
-  line-height: 1.6; text-align: justify; hyphens: none;
-}
-.tl-list li:last-child { margin-bottom: 0; }
-.tl-list li::before {
-  content: ""; position: absolute; left: 3px; top: .62em;
-  width: 4px; height: 4px; border-radius: 50%; background: var(--accent);
-}
 
 /* ---------------- Projects ---------------- */
 .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 36px; }
