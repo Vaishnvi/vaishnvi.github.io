@@ -286,7 +286,12 @@
             <span class="tl-date">May 2026 – Present</span>
           </div>
           <div class="tl-org"><a href="https://sync.so/" target="_blank" rel="noopener">Sync Labs</a> · San Francisco Bay Area</div>
-          <p class="tl-desc">Building applied video generative AI and lip-sync pipelines for production-scale video editing, including shot-level video/audio decomposition, multilingual lip-sync workflows, and scalable inference orchestration. A core focus is <strong>vision-language models (VLMs) for automated quality control</strong>: I benchmark and adapt open VLMs such as <strong>Gemma</strong>, <strong>Qwen-VL</strong>, and <strong>NVIDIA Cosmos</strong> to judge generated video the way a human reviewer would, scoring lip-sync fidelity, temporal consistency, and visual artifacts. This turns slow, subjective manual review into a scalable, model-driven evaluation loop that catches failures and quality regressions automatically.</p>
+          <p class="tl-desc">Building applied video generative AI and lip-sync pipelines for production-scale video editing (shot-level video/audio decomposition, multilingual lip-sync, and scalable inference orchestration), with a focus on <strong>vision-language models (VLMs) for automated visual quality control</strong>:</p>
+          <ul class="tl-list">
+            <li>Deployed multimodal vision-LLMs, <strong>Google DeepMind's Gemma-3-12B</strong> and <strong>Alibaba's Qwen2.5-VL-7B</strong>, locally via <strong>Ollama</strong> for automated visual QC of AI lip-sync video, benchmarked against <strong>NVIDIA Cosmos Reason</strong>; engineered structured-output prompting, multi-model agreement gating, and per-model routing around each model's blind spots.</li>
+            <li>Built a human-in-the-loop workflow that turns reviewer verdicts into labeled data, and architected a <strong>LoRA (low-rank adapter)</strong> fine-tuning path for Qwen2.5-VL on artifact crops to specialize detection past zero-shot limits.</li>
+            <li>Evaluated <strong>RLHF vs. supervised fine-tuning</strong>, choosing label-based SFT/LoRA for the detection task, and built the dataset and per-class precision/recall/F1 evaluation harness to drive it.</li>
+          </ul>
         </div>
         <div class="tl-item">
           <div class="tl-head">
@@ -415,10 +420,16 @@
     <section id="writing" class="reveal">
       <h2 class="section-title">Writing</h2>
       <p style="color:var(--text-soft); margin:-8px 0 20px; font-size:.95rem;">
-        I occasionally write to share what I've learned, mostly to help others navigating grad-school
-        applications find their own path.
+        I occasionally write to share what I've learned, from intuitions behind machine-learning
+        concepts to helping others navigate grad-school applications and find their own path.
       </p>
       <div class="cards">
+        <a class="card blog-card" href="https://vaishnavikhindkar.substack.com/p/the-day-i-actually-understood-logistic" target="_blank" rel="noopener">
+          <span class="blog-tag">Substack</span>
+          <h3>The Day I Actually Understood Logistic Regression</h3>
+          <p>An intuitive walk through the math that finally made logistic regression click, from odds and log-odds to the sigmoid and why it works.</p>
+          <span class="blog-more">Read on Substack →</span>
+        </a>
         <a class="card blog-card" href="https://medium.com/@vkhindkar/how-i-got-into-cmus-mscv-program-my-sop-application-tips-a5d4eb98d548" target="_blank" rel="noopener">
           <span class="blog-tag">Medium</span>
           <h3>How I Got Into CMU's MSCV Program</h3>

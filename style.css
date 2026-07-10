@@ -99,7 +99,7 @@ section { padding: 40px 0 4px; }
 .intro { padding-top: 52px; }
 .intro::after { content: ""; display: block; clear: both; }
 .intro-photo {
-  float: right; width: 240px; margin: 6px 0 24px 60px; text-align: center;
+  float: right; width: 300px; margin: 6px 0 24px 56px; text-align: center;
 }
 .intro h1, .hero h1 {
   font-family: "Fraunces", Georgia, serif;
@@ -118,8 +118,8 @@ section { padding: 40px 0 4px; }
 .intro .affil-sub:first-of-type { margin-top: 8px; }
 .intro .affil-sub a { font-weight: 500; }
 .hero-photo {
-  flex: 0 0 auto; width: 200px; height: 200px; border-radius: 50%;
-  object-fit: cover; border: 1px solid var(--border);
+  flex: 0 0 auto; width: 100%; height: auto; border-radius: 14px;
+  object-fit: contain; border: 1px solid var(--border);
 }
 .photo-contact { margin-top: 16px; text-align: center; }
 .intro-photo .email-line {
@@ -302,6 +302,19 @@ section { padding: 40px 0 4px; }
 .tl-date { font-size: .82rem; color: var(--text-mute); font-weight: 500; white-space: nowrap; }
 .tl-org { font-size: .92rem; color: var(--accent); font-weight: 500; margin: 1px 0 5px; }
 .tl-desc { font-size: .92rem; color: var(--text-soft); margin: 0; }
+.tl-list {
+  list-style: none; margin: 8px 0 0; padding: 0;
+  font-size: .92rem; color: var(--text-soft);
+}
+.tl-list li {
+  position: relative; padding-left: 16px; margin-bottom: 7px;
+  line-height: 1.6; text-align: justify; hyphens: none;
+}
+.tl-list li:last-child { margin-bottom: 0; }
+.tl-list li::before {
+  content: ""; position: absolute; left: 3px; top: .62em;
+  width: 4px; height: 4px; border-radius: 50%; background: var(--accent);
+}
 
 /* ---------------- Projects ---------------- */
 .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 36px; }
@@ -396,7 +409,7 @@ footer .socials { justify-content: center; margin-top: 16px; }
   .nav-burger { display: block; }
   .nav-extra { display: flex; align-items: center; gap: 10px; }
   .intro-photo { float: none; width: 100%; margin: 0 0 22px; }
-  .hero-photo { width: 160px; height: 160px; }
+  .hero-photo { width: 100%; height: auto; }
   .cards, .grid-2, .lenses { grid-template-columns: 1fr; }
   .pub { flex-direction: column; gap: 14px; }
   .pub-badge { flex: 0 0 auto; width: 100%; height: auto; flex-direction: row; gap: 10px; padding: 10px 14px; }
