@@ -160,14 +160,14 @@
     <section id="news" class="reveal">
       <h2 class="section-title">News</h2>
       <ul class="news">
-        <li><span class="date">Jun 2026</span><span class="item">Our paper <em>“Diagnosing Aerial-View Object Detectors with Foundational Image Generative Models”</em> was accepted to <strong>ECCV 2026</strong>!</span></li>
+        <li><span class="date">Jun 2026</span><span class="item">Our paper <em>"Diagnosing Aerial-View Object Detectors with Foundational Image Generative Models"</em> was accepted to <strong>ECCV 2026</strong>!</span></li>
         <li><span class="date">May 2026</span><span class="item">Started as a <strong>Machine Learning Engineering Intern at <a href="https://sync.so/" target="_blank" rel="noopener">Sync Labs</a></strong> (San Francisco Bay Area), working on video generative AI and lip-sync pipelines.</span></li>
         <li><span class="date">May 2026</span><span class="item">Joined <a href="https://www.andrejristeski.org/" target="_blank" rel="noopener">Prof. Andrej Risteski</a>'s group as a <strong>Graduate Research Fellow</strong>, studying reward-tilted sampling for generative models.</span></li>
         <li><span class="date">Jan 2026</span><span class="item">Began my <strong>MSCV Capstone (Slot4D)</strong> on object-centric 4D reconstruction with <a href="https://www.ri.cmu.edu/ri-faculty/laszlo-attila-jeni/" target="_blank" rel="noopener">Prof. László A. Jeni</a>.</span></li>
         <li><span class="date">Sep 2025</span><span class="item">Started research with <a href="https://www.cs.cmu.edu/~ftorre/" target="_blank" rel="noopener">Prof. Fernando De la Torre</a> on generative diagnosis of aerial object detectors.</span></li>
         <li><span class="date">Aug 2025</span><span class="item">Started my <strong>M.S. in Computer Vision</strong> at Carnegie Mellon University.</span></li>
         <li><span class="date">Oct 2024</span><span class="item">Presented our work at <strong>IROS 2024</strong> in Abu Dhabi.</span></li>
-        <li><span class="date">Jun 2024</span><span class="item">Our paper <em>“Can Reasons Help Improve Pedestrian Intent Estimation? A Cross-Modal Approach”</em> was accepted at <strong>IROS 2024</strong>.</span></li>
+        <li><span class="date">Jun 2024</span><span class="item">Our paper <em>"Can Reasons Help Improve Pedestrian Intent Estimation? A Cross-Modal Approach"</em> was accepted at <strong>IROS 2024</strong>.</span></li>
         <li><span class="date">Jan 2022</span><span class="item">Presented <strong>ILLUME</strong> at <strong>WACV 2022</strong> in Hawaii, USA.</span></li>
       </ul>
     </section>
@@ -190,6 +190,7 @@
           <p class="pub-note">A synthetic-to-real diagnostic framework that uses foundation image generative models to build attribute-controlled aerial testbeds, exposing systematic detector weaknesses across scene type, season, and weather, and guiding targeted data collection for up to <strong>11% AP50</strong> improvement.</p>
           <div class="pub-links">
             <a href="https://arxiv.org/abs/2607.02718" target="_blank" rel="noopener">arXiv</a>
+            <a href="https://github.com/humansensinglab/AVODDiag" target="_blank" rel="noopener">Code</a>
           </div>
         </div>
       </article>
@@ -301,7 +302,7 @@
             <span class="tl-date">Jan 2026 – Present</span>
           </div>
           <div class="tl-org">Robotics Institute, CMU · Advisor: Prof. László A. Jeni</div>
-          <p class="tl-desc">Developing <strong>Slot4D</strong>, an object-centric 4D reconstruction project bridging low-level geometric tracking with object-level scene understanding, using lightweight Slot Attention adapters over frozen geometric backbones (VGGT / SpatialTracker-style) for dynamic multi-view scenes.</p>
+          <p class="tl-desc">Developing <strong>Slot4D</strong>, an object-centric approach to 4D reconstruction: built an adaptive slot-attention head over frozen geometric backbones (VGGT / VGGT-Omega) that decomposes scenes into object slots and masks, plus a slot-conditioned refinement network that has delivered up to 4&times; better surface reconstruction on CO3D, ScanNet, and Virtual KITTI; now extending these gains to multi-view-consistent, streaming 4D.</p>
         </div>
         <div class="tl-item">
           <div class="tl-head">
@@ -338,24 +339,31 @@
         <div class="card">
           <h3>Slot4D: Object Slots for 4D Reconstruction</h3>
           <div class="advisor">MSCV Capstone · Prof. László A. Jeni</div>
-          <p>Slot4D explores object-centric learning for dynamic 4D scene reconstruction. The project studies whether slot-based grouping can decompose a scene into meaningful object representations using geometric, motion, and appearance cues from 4D reconstruction pipelines. Instead of treating a dynamic scene only as dense point tracks or frame-level features, Slot4D aims to recover object-level structure that can support more interpretable and temporally consistent 4D scene understanding.</p>
+          <video autoplay loop muted playsinline preload="metadata" style="width:100%; border-radius:10px; margin:12px 0 4px; display:block;" aria-label="Slot4D demo: a scene decomposed into object slots with per-pixel masks">
+            <source src="assets/slot4d_demo.mp4" type="video/mp4" />
+          </video>
+          <p>Slot4D explores object-centric learning for 4D scene reconstruction, built on feed-forward geometric foundation models (VGGT / VGGT-Omega). The first stage of the project built an adaptive slot-attention head that groups the backbone's features, grounded in predicted depth and camera geometry, into per-object slots and masks, reliably decomposing scenes into objects and regions. Building on this, a slot-conditioned refinement network predicts per-object corrections to the base geometry and has delivered up to 4&times; better surface reconstruction on CO3D, ScanNet, and Virtual KITTI, even closing holes the base model leaves behind. The current focus is carrying these per-view gains over to a globally consistent multi-view reconstruction, en route to the project's larger goal: dynamic, streaming 4D reconstruction that sees objects, not just points.</p>
         </div>
         <div class="card">
           <h3>Reward-Tilted Generative Sampling</h3>
           <div class="advisor">Prof. Andrej Risteski · with Dhruv Rohatgi</div>
+          <img src="assets/reward_tilt.jpg" alt="Two-moons distribution: ordinary lifted diffusion vs reward-tilted samples" style="width:100%; border-radius:10px; margin:12px 0 4px; display:block;" />
           <p>Studying how generative models can be steered toward high-reward outputs by reshaping their sampling distribution. This project investigates reward-tilted distributions, <span class="math">p*(x) &prop; p(x)&thinsp;exp(r(x))</span>, and <em>lift-and-tilt</em> constructions for making reward-guided generation more stable and principled, especially when the reward landscape is complex, indefinite, or non-concave.</p>
         </div>
         <div class="card">
           <h3>Cross-Resolution Gaussian Splatting</h3>
           <div class="advisor">Prof. Shubham Tulsiani</div>
+          <img src="assets/xrgs_orchid_comparison.jpg" alt="Orchid reconstruction: Ground Truth vs 3D-GS vs XR-GS" style="width:100%; border-radius:10px; margin:12px 0 4px; display:block;" />
           <p>This project tackles 3D Gaussian Splatting when the input views come at very different resolutions, for example a few sharp, high-resolution captures alongside many low-resolution images of the same scene. It studies how to fuse these heterogeneous sources into a single consistent radiance field, using resolution-aware, detail-preserving densification so that fine detail from the high-resolution views is retained rather than washed out by the coarser ones. The goal is high-fidelity reconstruction that makes the most of mixed-quality, real-world image collections.</p>
           <div class="pub-links" style="margin-top:12px;">
+            <a href="https://drive.google.com/file/d/1RxjI92w71QtVK-kmI31bjvyCvfeNcZN3/view?usp=sharing" target="_blank" rel="noopener">Report</a>
             <a href="https://docs.google.com/presentation/d/1vipHo70xufhDgIYOS-IfrF3uOF-6Yqab2wNmoQeXhY4/edit?usp=sharing" target="_blank" rel="noopener">Slides</a>
           </div>
         </div>
         <div class="card">
           <h3>Single-View Holistic Robot Pose Estimation</h3>
           <div class="advisor">Prof. Jun-Yan Zhu</div>
+          <img src="assets/robot_pose_fig1.png" alt="Known-joint robot pose estimation vs unknown-joint holistic robot pose estimation" style="width:100%; border-radius:10px; margin:12px 0 4px; display:block;" />
           <p>Estimating the full pose of a robot, its joint configuration and 2D/3D keypoints, from a single RGB image without depth or known camera-to-robot calibration. The project builds a holistic pipeline trained largely on synthetic data, using domain randomization and synthetic-to-real transfer to bridge the appearance gap and generalize across camera viewpoints and even to robot types unseen during training. Robust single-view pose estimation like this is a step toward lighter-weight perception for manipulation and human-robot interaction.</p>
           <div class="pub-links" style="margin-top:12px;">
             <a href="https://drive.google.com/file/d/1SAgMPe8BT_WgzHr3WpqjKP82UJxL-UDJ/view?usp=sharing" target="_blank" rel="noopener">Report</a>
@@ -505,7 +513,7 @@
   <!-- ===================== FOOTER ===================== -->
   <footer>
     <div class="wrap">
-      <p>“The real existential challenge is to live up to your fullest potential.” — Dr. Fei-Fei Li</p>
+      <p>"The real existential challenge is to live up to your fullest potential." — Dr. Fei-Fei Li</p>
       <div class="socials">
         <a id="footerEmail" href="#">Email</a>
         <a href="https://scholar.google.com/citations?user=X0FxJ0UAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
