@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SVM Explorer — margins, w, and the kernel of it all</title>
+<style>
+  body{font-family:Georgia,'Times New Roman',serif;max-width:900px;margin:0 auto;padding:24px;color:#222;background:#fff;line-height:1.6;}
+  h1{font-size:24px;font-weight:600;}
+  .wrap{display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start;}
+  canvas{border:1px solid #ddd;border-radius:12px;background:#fff;touch-action:none;}
+  .panel{flex:1;min-width:260px;display:flex;flex-direction:column;gap:16px;}
+  .row label{font-size:13px;color:#666;}
+  .row .out{float:right;color:#222;font-weight:600;}
+  input[type=range]{width:100%;}
+  button{padding:8px 12px;border:1px solid #bbb;background:#fafafa;border-radius:8px;cursor:pointer;font-family:inherit;font-size:13px;}
+  button:hover{background:#f0f0f0;}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .card{background:#f6f6f4;border-radius:8px;padding:10px;}
+  .card .k{font-size:12px;color:#666;}
+  .card .val{font-size:20px;font-weight:600;}
+  #msg{font-size:13px;color:#555;line-height:1.6;}
+  .legend{font-size:13px;color:#666;margin-top:6px;}
+</style>
+</head>
+<body>
+<h1>SVM explorer: the weight vector, the margin, and the α's</h1>
+<p class="legend">Crosses are one class (y = −1), circles the other (y = +1). Drag on the canvas — or use the tilt slider — to rotate the boundary. Stretch <em>‖w‖</em> to see the raw score change while the real distance holds. Then snap to the max-margin solution to reveal the support vectors.</p>
+
+<div class="wrap">
+  <canvas id="cv" width="420" height="420"></canvas>
+  <div class="panel">
+    <div class="row"><label>boundary tilt (direction of w) <span class="out" id="angOut">—</span></label>
+      <input type="range" id="ang" min="0" max="180" step="1" value="35"></div>
+    <div class="row"><label>length of w (‖w‖) <span class="out" id="lenOut">—</span></label>
+      <input type="range" id="len" min="0.3" max="3" step="0.05" value="1"></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <button id="snap" style="flex:1;">snap to max-margin</button>
+      <button id="pin" style="flex:1;">set ‖w‖ so nearest = 1</button>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="k">geometric margin (real distance)</div><div class="val" id="geo">—</div></div>
+      <div class="card"><div class="k">functional margin (raw score)</div><div class="val" id="fun">—</div></div>
+    </div>
+    <div id="msg"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var cv=document.getElementById('cv'),ctx=cv.getContext('2d');
+  var pts=[{x:2,y:2,l:-1},{x:0,y:0,l:-1},{x:0,y:4,l:-1},{x:5,y:3,l:1},{x:7,y:1,l:1},{x:7,y:5,l:1}];
+  var VX0=-1,VX1=8,VY0=-1,VY1=6,W=420,H=420;
+  function SX(x){return (x-VX0)/(VX1-VX0)*W;}
+  function SY(y){return H-(y-VY0)/(VY1-VY0)*H;}
+  var angEl=document.getElementById('ang'),lenEl=document.getElementById('len'),showOpt=false;
+  function geo(phi){var nx=Math.cos(phi),ny=Math.sin(phi),posMin=1e9,negMax=-1e9;
+    for(var i=0;i<pts.length;i++){var s=nx*pts[i].x+ny*pts[i].y;
+      if(pts[i].l>0){if(s<posMin)posMin=s;}else{if(s>negMax)negMax=s;}}
+    return{nx:nx,ny:ny,posMin:posMin,negMax:negMax,gap:posMin-negMax,center:(posMin+negMax)/2,M:(posMin-negMax)/2};}
+  function best(){var bM=-1,bp=0;for(var d=0;d<=180;d++){var g=geo(d*Math.PI/180);if(g.gap>0&&g.M>bM){bM=g.M;bp=d;}}return bp;}
+  function draw(){ctx.clearRect(0,0,W,H);var phi=(+angEl.value)*Math.PI/180,g=geo(phi),len=+lenEl.value,sep=g.gap>0;
+    ctx.strokeStyle='#e5e5e5';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(SX(0),SY(VY0));ctx.lineTo(SX(0),SY(VY1));ctx.moveTo(SX(VX0),SY(0));ctx.lineTo(SX(VX1),SY(0));ctx.stroke();
+    if(sep){var tx=-g.ny,ty=g.nx;
+      function lineAt(off,st,wd){var px=(g.center+off)*g.nx,py=(g.center+off)*g.ny;ctx.beginPath();ctx.moveTo(SX(px-tx*20),SY(py-ty*20));ctx.lineTo(SX(px+tx*20),SY(py+ty*20));ctx.strokeStyle=st;ctx.lineWidth=wd;ctx.stroke();}
+      ctx.setLineDash([6,5]);lineAt(g.M,'#aaa',1.2);lineAt(-g.M,'#aaa',1.2);ctx.setLineDash([]);lineAt(0,'#111',2.4);
+      var ax=g.center*g.nx,ay=g.center*g.ny,L=len,ex=ax+g.nx*L,ey=ay+g.ny*L;
+      ctx.strokeStyle='#D85A30';ctx.fillStyle='#D85A30';ctx.lineWidth=2.4;ctx.beginPath();ctx.moveTo(SX(ax),SY(ay));ctx.lineTo(SX(ex),SY(ey));ctx.stroke();
+      var a=Math.atan2(SY(ey)-SY(ay),SX(ex)-SX(ax));ctx.beginPath();ctx.moveTo(SX(ex),SY(ey));ctx.lineTo(SX(ex)-9*Math.cos(a-0.4),SY(ey)-9*Math.sin(a-0.4));ctx.lineTo(SX(ex)-9*Math.cos(a+0.4),SY(ey)-9*Math.sin(a+0.4));ctx.closePath();ctx.fill();
+      ctx.font='italic 15px Georgia';ctx.fillText('w',SX(ex)+5,SY(ey)-5);}
+    var sv={};if(sep){for(var i=0;i<pts.length;i++){var s=g.nx*pts[i].x+g.ny*pts[i].y;if(pts[i].l>0&&Math.abs(s-g.posMin)<1e-6)sv[i]=1;if(pts[i].l<0&&Math.abs(s-g.negMax)<1e-6)sv[i]=1;}}
+    for(var i=0;i<pts.length;i++){var p=pts[i],X=SX(p.x),Y=SY(p.y);
+      if(showOpt&&sv[i]){ctx.beginPath();ctx.arc(X,Y,15,0,7);ctx.strokeStyle='#D85A30';ctx.lineWidth=1.5;ctx.setLineDash([3,3]);ctx.stroke();ctx.setLineDash([]);}
+      if(p.l>0){ctx.beginPath();ctx.arc(X,Y,8,0,7);ctx.strokeStyle='#0F6E56';ctx.lineWidth=2.6;ctx.stroke();}
+      else{ctx.strokeStyle='#185FA5';ctx.lineWidth=2.6;ctx.beginPath();ctx.moveTo(X-6,Y-6);ctx.lineTo(X+6,Y+6);ctx.moveTo(X-6,Y+6);ctx.lineTo(X+6,Y-6);ctx.stroke();}}
+    document.getElementById('angOut').textContent=Math.round(+angEl.value)+'\u00b0';
+    document.getElementById('lenOut').textContent=len.toFixed(2);
+    var msg=document.getElementById('msg');
+    if(sep){document.getElementById('geo').textContent=g.M.toFixed(2);document.getElementById('fun').textContent=(len*g.M).toFixed(2);
+      var L=[];L.push('geometric margin = functional \u00f7 \u2016w\u2016 = '+(len*g.M).toFixed(2)+' \u00f7 '+len.toFixed(2)+' = <b>'+g.M.toFixed(2)+'</b> \u2014 the real distance, and \u2016w\u2016 does not change it.');
+      if(Math.abs(len*g.M-1)<0.03)L.push('nearest point now sits at functional margin <b>1</b> \u2014 the SVM scaling. Here \u2016w\u2016 = 1/margin = '+(1/g.M).toFixed(2)+'.');
+      if(showOpt){var sp=null,sn=null;for(var i=0;i<pts.length;i++){if(sv[i]){if(pts[i].l>0)sp=pts[i];else sn=pts[i];}}
+        if(sp&&sn){var d2=(sp.x-sn.x)*(sp.x-sn.x)+(sp.y-sn.y)*(sp.y-sn.y),al=2/d2;
+          L.push('<b>max-margin found.</b> The two circled points are the support vectors. \u03b1 = 2/|p\u207a\u2212p\u207b|\u00b2 = <b>'+al.toFixed(2)+'</b> each; the other four points have \u03b1 = 0.');
+          L.push('w = \u03b1\u00b7(+1)\u00b7p\u207a + \u03b1\u00b7(\u22121)\u00b7p\u207b = ('+(al*(sp.x-sn.x)).toFixed(2)+', '+(al*(sp.y-sn.y)).toFixed(2)+') \u2014 built only from the support vectors.');}}
+      msg.innerHTML=L.join('<br><br>');}
+    else{document.getElementById('geo').textContent='\u2014';document.getElementById('fun').textContent='\u2014';msg.innerHTML='At this tilt the classes <b>overlap</b> \u2014 no separating boundary. Rotate until crosses and circles fall on opposite sides.';}}
+  angEl.oninput=function(){showOpt=false;draw();};lenEl.oninput=function(){draw();};
+  document.getElementById('snap').onclick=function(){angEl.value=best();showOpt=true;draw();};
+  document.getElementById('pin').onclick=function(){var g=geo((+angEl.value)*Math.PI/180);if(g.gap>0){lenEl.value=Math.max(0.3,Math.min(3,1/g.M));draw();}};
+  var drag=false;cv.addEventListener('pointerdown',function(){drag=true;});window.addEventListener('pointerup',function(){drag=false;});
+  cv.addEventListener('pointermove',function(e){if(!drag)return;var r=cv.getBoundingClientRect();var mx=(e.clientX-r.left)/W*(VX1-VX0)+VX0,my=VY1-(e.clientY-r.top)/H*(VY1-VY0);var a=Math.atan2(my-2.5,mx-3.5)*180/Math.PI;if(a<0)a+=180;if(a>180)a-=180;angEl.value=Math.round(a);showOpt=false;draw();});
+  draw();
+})();
+</script>
+</body>
+</html>
