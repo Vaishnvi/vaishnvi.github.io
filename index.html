@@ -78,13 +78,15 @@
         (Robotics Institute), <strong>Carnegie Mellon University</strong>, where I work with <a href="https://www.andrejristeski.org/" target="_blank" rel="noopener">Prof.
         Andrej Risteski</a> on the theory of generative modeling and sampling, and with
         <a href="https://www.ri.cmu.edu/ri-faculty/laszlo-attila-jeni/" target="_blank" rel="noopener">Prof. László
-        A. Jeni</a> on object-centric 4D reconstruction. I am also a Machine Learning Engineering Intern at
-        <a href="https://sync.so/" target="_blank" rel="noopener">Sync Labs</a>, working on video generative AI
-        and lip-sync pipelines. Earlier at CMU, I worked with <a href="https://www.cs.cmu.edu/~ftorre/" target="_blank" rel="noopener">Prof.
+        A. Jeni</a> on object-centric 4D reconstruction. I recently completed a Machine Learning Engineering internship at
+        <a href="https://sync.so/" target="_blank" rel="noopener">Sync Labs</a>, where I built an automated
+        visual-QC system for AI lip-sync video and fine-tuned a vision-language model that roughly doubled
+        QC accuracy and beat a frontier model zero-shot. Earlier at CMU, I worked with <a href="https://www.cs.cmu.edu/~ftorre/" target="_blank" rel="noopener">Prof.
         Fernando De la Torre</a> on diagnosing aerial object detectors with foundation generative models.
       </p>
       <p>
-        Before CMU, I spent several years at <strong>IIIT Hyderabad</strong>. As a Research Scientist at CVIT, I
+        Before CMU, I spent more than five years in computer-vision research and applied AI, largely at
+        <strong>IIIT Hyderabad</strong>. As a Research Scientist at CVIT, I
         worked with <a href="https://faculty.iiit.ac.in/~jawahar/" target="_blank" rel="noopener">Prof. C. V.
         Jawahar</a>, <a href="https://people.iith.ac.in/vineethnb/" target="_blank" rel="noopener">Prof. Vineeth
         N. Balasubramanian</a>, and <a href="https://www.cse.iitd.ac.in/~chetan/" target="_blank" rel="noopener">Prof.
@@ -160,6 +162,7 @@
     <section id="news" class="reveal">
       <h2 class="section-title">News</h2>
       <ul class="news">
+        <li><span class="date">Aug 2026</span><span class="item">Completed my <strong>ML Engineering internship at <a href="https://sync.so/" target="_blank" rel="noopener">Sync Labs</a></strong>, where I built an automated visual-QC pipeline for AI lip-sync video, fine-tuning a vision-language model to roughly double QC accuracy (macro-F1 <strong>0.19 &rarr; 0.49</strong>) and beat a frontier model zero-shot.</span></li>
         <li><span class="date">Jun 2026</span><span class="item">Our paper <em>"Diagnosing Aerial-View Object Detectors with Foundational Image Generative Models"</em> was accepted to <strong>ECCV 2026</strong>!</span></li>
         <li><span class="date">May 2026</span><span class="item">Started as a <strong>Machine Learning Engineering Intern at <a href="https://sync.so/" target="_blank" rel="noopener">Sync Labs</a></strong> (San Francisco Bay Area), working on video generative AI and lip-sync pipelines.</span></li>
         <li><span class="date">May 2026</span><span class="item">Joined <a href="https://www.andrejristeski.org/" target="_blank" rel="noopener">Prof. Andrej Risteski</a>'s group as a <strong>Graduate Research Fellow</strong>, studying reward-tilted sampling for generative models.</span></li>
@@ -284,10 +287,10 @@
         <div class="tl-item">
           <div class="tl-head">
             <span class="tl-role">Machine Learning Engineering Intern</span>
-            <span class="tl-date">May 2026 – Present</span>
+            <span class="tl-date">May 2026 – Aug 2026</span>
           </div>
           <div class="tl-org"><a href="https://sync.so/" target="_blank" rel="noopener">Sync Labs</a> · San Francisco Bay Area</div>
-          <p class="tl-desc">Building video-generative-AI and lip-sync systems, focused on vision-language models (VLMs) for automated visual quality control, replacing manual, frame-by-frame review of AI-generated video. Architected GPU-served VLM inference on Modal: deployed multimodal models (Google DeepMind's Gemma-3-12B, Qwen2.5-VL-7B), benchmarked against NVIDIA Cosmos Reason, and engineered structured-output prompting, multi-model agreement gating, and per-model routing around each model's blind spots. Built a human-in-the-loop labeling loop feeding a LoRA fine-tuning path for Qwen2.5-VL on artifact crops, and evaluated RLHF vs. supervised fine-tuning with a per-class precision/recall/F1 harness to drive model iteration.</p>
+          <p class="tl-desc">Built an <strong>automated visual-QC system for AI lip-sync video</strong> that replaces manual, frame-by-frame review, flagging eight visual artifact types (teeth colour and structure, tongue defects, composite-boundary seams, texture loss, gaze drift, background changes). Designed a hybrid pipeline pairing fine-tuned vision-language models for appearance defects with classical CV (variance-of-Laplacian sharpness, optical flow, plate-difference change maps, and MediaPipe / InsightFace landmark tracking) for geometry and motion, reduced to five targeted model calls per frame. Labelled a 693-frame, 59-shot dataset with a macOS tool I rebuilt (<strong>Cropaway</strong>), then fine-tuned <strong>Qwen&nbsp;3.6-27B</strong> with a single multi-task <strong>QLoRA</strong> adapter (124M params) on 8&times;H200 GPUs via Modal, lifting macro-F1 from <strong>0.19 to 0.49 (~2&times;)</strong> and beating a frontier model (GPT-5.6-sol) zero-shot, all driven by a leakage-free, per-detector precision/recall/F1 evaluation. Also shipped lip-sync ML edits across 10+ production and demo titles.</p>
         </div>
         <div class="tl-item">
           <div class="tl-head">
@@ -337,6 +340,65 @@
     <section id="projects" class="reveal">
       <h2 class="section-title">Selected Projects</h2>
       <div class="cards">
+        <div class="card">
+          <h3>Automated Visual QC for AI Lip-Sync</h3>
+          <div class="advisor">Sync Labs · ML Engineering Internship · May – Aug 2026</div>
+          <div style="margin:14px 0 6px;">
+            <svg viewBox="0 0 1000 570" width="100%" style="display:block;border-radius:12px;height:auto;" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pipeline: one frame becomes five crops, judged by a fine-tuned model plus classical computer vision, producing eight artifact verdicts; fine-tuned macro-F1 0.49 versus GPT-5.6-sol zero-shot 0.30 versus base zero-shot 0.19.">
+              <defs><marker id="svgar" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#94a3b8"/></marker></defs>
+              <rect x="0" y="0" width="1000" height="570" rx="16" fill="#f7f9fc"/>
+              <rect x="0.5" y="0.5" width="999" height="569" rx="16" fill="none" stroke="#e2e8f0"/>
+              <text x="40" y="44" font-family="Inter, system-ui, sans-serif" font-size="19" font-weight="700" fill="#0f172a">One frame &#8594; eight verdicts</text>
+              <text x="40" y="67" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#64748b">A fine-tuned vision-language model paired with classical computer vision</text>
+              <rect x="40" y="92" width="180" height="96" rx="12" fill="#ffffff" stroke="#dbe3ee"/>
+              <text x="130" y="128" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="600" fill="#0f172a">Frame in</text>
+              <text x="130" y="152" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b">plate + lip-sync</text>
+              <text x="130" y="169" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b">output</text>
+              <path d="M228 140 h44" stroke="#94a3b8" stroke-width="2" fill="none" marker-end="url(#svgar)"/>
+              <rect x="286" y="92" width="180" height="96" rx="12" fill="#ffffff" stroke="#dbe3ee"/>
+              <text x="376" y="128" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="600" fill="#0f172a">5 targeted crops</text>
+              <text x="376" y="152" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b">one per detector</text>
+              <text x="376" y="169" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b">group</text>
+              <path d="M474 140 h44" stroke="#94a3b8" stroke-width="2" fill="none" marker-end="url(#svgar)"/>
+              <rect x="532" y="84" width="196" height="112" rx="12" fill="#0f172a"/>
+              <text x="630" y="122" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="700" fill="#ffffff">Fine-tuned model</text>
+              <text x="630" y="146" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#c7d2fe">Qwen 3.6-27B + QLoRA</text>
+              <text x="630" y="168" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#c7d2fe">+ classical CV</text>
+              <path d="M736 140 h44" stroke="#94a3b8" stroke-width="2" fill="none" marker-end="url(#svgar)"/>
+              <rect x="794" y="92" width="166" height="96" rx="12" fill="#ffffff" stroke="#dbe3ee"/>
+              <text x="877" y="128" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="600" fill="#0f172a">8 verdicts</text>
+              <text x="877" y="152" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b">artifact flags</text>
+              <text x="877" y="169" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b">+ notes</text>
+              <text x="40" y="238" font-family="Inter, system-ui, sans-serif" font-size="11.5" font-weight="700" letter-spacing="0.06em" fill="#334155">CLASSICAL CV</text>
+              <g font-family="Inter, system-ui, sans-serif" font-size="12" fill="#475569">
+                <rect x="40" y="250" width="196" height="30" rx="15" fill="#eef2f7" stroke="#dbe3ee"/><text x="138" y="269" text-anchor="middle">variance-of-Laplacian</text>
+                <rect x="246" y="250" width="118" height="30" rx="15" fill="#eef2f7" stroke="#dbe3ee"/><text x="305" y="269" text-anchor="middle">optical flow</text>
+                <rect x="374" y="250" width="156" height="30" rx="15" fill="#eef2f7" stroke="#dbe3ee"/><text x="452" y="269" text-anchor="middle">plate-difference</text>
+                <rect x="540" y="250" width="150" height="30" rx="15" fill="#eef2f7" stroke="#dbe3ee"/><text x="615" y="269" text-anchor="middle">MediaPipe 478</text>
+                <rect x="700" y="250" width="118" height="30" rx="15" fill="#eef2f7" stroke="#dbe3ee"/><text x="759" y="269" text-anchor="middle">InsightFace</text>
+              </g>
+              <text x="40" y="322" font-family="Inter, system-ui, sans-serif" font-size="11.5" font-weight="700" letter-spacing="0.06em" fill="#334155">MACRO-F1 &#183; ZERO-SHOT vs FINE-TUNED</text>
+              <text x="40" y="353" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#64748b">Fine-tuned</text>
+              <rect x="175" y="338" width="417" height="20" rx="5" fill="#2f6bff"/>
+              <text x="600" y="353" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" fill="#2f6bff">0.49</text>
+              <text x="40" y="383" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#64748b">GPT-5.6-sol</text>
+              <rect x="175" y="368" width="255" height="20" rx="5" fill="#cbd5e1"/>
+              <text x="438" y="383" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" fill="#475569">0.30</text>
+              <text x="40" y="413" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#64748b">Gemma 4-31B</text>
+              <rect x="175" y="398" width="230" height="20" rx="5" fill="#cbd5e1"/>
+              <text x="413" y="413" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" fill="#475569">0.27</text>
+              <text x="40" y="443" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#64748b">Qwen 3.6-27B</text>
+              <rect x="175" y="428" width="213" height="20" rx="5" fill="#cbd5e1"/>
+              <text x="396" y="443" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" fill="#475569">0.25</text>
+              <text x="40" y="473" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#64748b">Muse-Glimmer-30B</text>
+              <rect x="175" y="458" width="204" height="20" rx="5" fill="#cbd5e1"/>
+              <text x="387" y="473" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" fill="#475569">0.24</text>
+              <text x="40" y="506" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#475569">All zero-shot; the fine-tune is ~2&#215; the best off-the-shelf VLM and the only model trained on the task.</text>
+            </svg>
+          </div>
+          <p>At Sync Labs I built an automated visual-QC system for AI lip-sync video, replacing slow, manual frame-by-frame review. Its core is a <strong>fine-tuned vision-language model</strong>: I adapted <strong>Qwen&nbsp;3.6-27B</strong> with a parameter-efficient, multi-task <strong>QLoRA</strong> adapter so one model reads a crop and returns a structured verdict for each of eight artifact types. The best off-the-shelf open VLMs &mdash; Qwen&nbsp;3.6-27B, Gemma&nbsp;4-31B and Muse-Glimmer-30B &mdash; all plateaued near <strong>0.25</strong> macro-F1 zero-shot; fine-tuning lifted it to <strong>0.49 (~2&times;)</strong> and also beat <strong>GPT-5.6-sol</strong> zero-shot (0.49 vs 0.30), catching subtle defects the base model missed entirely (teeth-colour F1 0.00&nbsp;&rarr;&nbsp;0.57).</p>
+          <p>Around the model I added lightweight classical CV &mdash; variance-of-Laplacian sharpness, plate-difference maps, optical flow, and MediaPipe / InsightFace landmarks &mdash; for geometry and motion, gated so the VLM runs just five focused calls per frame. Alongside the QC model, I rebuilt <strong>Cropaway</strong>, the macOS <strong>SAM&nbsp;3</strong> masking tool artists use for every render, and shipped lip-sync ML edits across <strong>10+ production and demo titles</strong>.</p>
+        </div>
         <div class="card">
           <h3>Slot4D: Object Slots for 4D Reconstruction</h3>
           <div class="advisor">MSCV Capstone · Prof. László A. Jeni · Jan 2026 – Present</div>
@@ -504,7 +566,7 @@
             <span class="chip">Python</span><span class="chip">C++</span><span class="chip">MATLAB</span>
             <span class="chip">SQL</span><span class="chip">Java</span><span class="chip">R</span>
             <span class="chip">PyTorch</span><span class="chip">TensorFlow</span><span class="chip">OpenCV</span>
-            <span class="chip">NVIDIA Triton</span><span class="chip">Docker</span><span class="chip">AWS</span>
+            <span class="chip">NVIDIA Triton</span><span class="chip">Modal</span><span class="chip">vLLM</span><span class="chip">Docker</span><span class="chip">AWS</span>
             <span class="chip">Git</span><span class="chip">LaTeX</span>
           </div>
           <h3>Focus Areas</h3>
@@ -512,6 +574,7 @@
             <li>Generative Modeling &amp; Sampling</li>
             <li>3D &amp; 4D Scene Understanding</li>
             <li>Video Generative AI</li>
+            <li>Vision-Language Models &amp; Model Fine-tuning</li>
             <li>Object-Centric &amp; Spatial Representations</li>
             <li>Object Detection &amp; Domain Adaptation</li>
           </ul>
