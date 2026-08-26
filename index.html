@@ -78,10 +78,10 @@
         (Robotics Institute), <strong>Carnegie Mellon University</strong>, where I work with <a href="https://www.andrejristeski.org/" target="_blank" rel="noopener">Prof.
         Andrej Risteski</a> on the theory of generative modeling and sampling, and with
         <a href="https://www.ri.cmu.edu/ri-faculty/laszlo-attila-jeni/" target="_blank" rel="noopener">Prof. László
-        A. Jeni</a> on object-centric 4D reconstruction. I recently completed a Machine Learning Engineering internship at
-        <a href="https://sync.so/" target="_blank" rel="noopener">Sync Labs</a>, where I built an automated
-        visual-QC system for AI lip-sync video and fine-tuned a vision-language model that roughly doubled
-        QC accuracy and beat a frontier model zero-shot. Earlier at CMU, I worked with <a href="https://www.cs.cmu.edu/~ftorre/" target="_blank" rel="noopener">Prof.
+        A. Jeni</a> on object-centric 4D reconstruction. I recently spent the summer as a Machine Learning Engineering Intern at
+        <a href="https://sync.so/" target="_blank" rel="noopener">Sync Labs</a>, where I built an automated visual-QC
+        system for AI lip-sync video generation and fine-tuned a vision-language model that roughly doubled QC
+        accuracy and beat a frontier model zero-shot. Earlier at CMU, I worked with <a href="https://www.cs.cmu.edu/~ftorre/" target="_blank" rel="noopener">Prof.
         Fernando De la Torre</a> on diagnosing aerial object detectors with foundation generative models.
       </p>
       <p>
@@ -162,7 +162,6 @@
     <section id="news" class="reveal">
       <h2 class="section-title">News</h2>
       <ul class="news">
-        <li><span class="date">Aug 2026</span><span class="item">Completed my <strong>ML Engineering internship at <a href="https://sync.so/" target="_blank" rel="noopener">Sync Labs</a></strong>, where I built an automated visual-QC pipeline for AI lip-sync video, fine-tuning a vision-language model to roughly double QC accuracy (macro-F1 <strong>0.19 &rarr; 0.49</strong>) and beat a frontier model zero-shot.</span></li>
         <li><span class="date">Jun 2026</span><span class="item">Our paper <em>"Diagnosing Aerial-View Object Detectors with Foundational Image Generative Models"</em> was accepted to <strong>ECCV 2026</strong>!</span></li>
         <li><span class="date">May 2026</span><span class="item">Started as a <strong>Machine Learning Engineering Intern at <a href="https://sync.so/" target="_blank" rel="noopener">Sync Labs</a></strong> (San Francisco Bay Area), working on video generative AI and lip-sync pipelines.</span></li>
         <li><span class="date">May 2026</span><span class="item">Joined <a href="https://www.andrejristeski.org/" target="_blank" rel="noopener">Prof. Andrej Risteski</a>'s group as a <strong>Graduate Research Fellow</strong>, studying reward-tilted sampling for generative models.</span></li>
@@ -396,8 +395,7 @@
               <text x="40" y="506" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#475569">All zero-shot; the fine-tune is ~2&#215; the best off-the-shelf VLM and the only model trained on the task.</text>
             </svg>
           </div>
-          <p>At Sync Labs I built an automated visual-QC system for AI lip-sync video, replacing slow, manual frame-by-frame review. Its core is a <strong>fine-tuned vision-language model</strong>: I adapted <strong>Qwen&nbsp;3.6-27B</strong> with a parameter-efficient, multi-task <strong>QLoRA</strong> adapter so one model reads a crop and returns a structured verdict for each of eight artifact types. The best off-the-shelf open VLMs &mdash; Qwen&nbsp;3.6-27B, Gemma&nbsp;4-31B and Muse-Glimmer-30B &mdash; all plateaued near <strong>0.25</strong> macro-F1 zero-shot; fine-tuning lifted it to <strong>0.49 (~2&times;)</strong> and also beat <strong>GPT-5.6-sol</strong> zero-shot (0.49 vs 0.30), catching subtle defects the base model missed entirely (teeth-colour F1 0.00&nbsp;&rarr;&nbsp;0.57).</p>
-          <p>Around the model I added lightweight classical CV &mdash; variance-of-Laplacian sharpness, plate-difference maps, optical flow, and MediaPipe / InsightFace landmarks &mdash; for geometry and motion, gated so the VLM runs just five focused calls per frame. Alongside the QC model, I rebuilt <strong>Cropaway</strong>, the macOS <strong>SAM&nbsp;3</strong> masking tool artists use for every render, and shipped lip-sync ML edits across <strong>10+ production and demo titles</strong>.</p>
+          <p>At Sync Labs I built an automated visual quality-control system for AI lip-sync video, replacing slow, manual frame-by-frame review. Its core is a <strong>fine-tuned vision-language model</strong>: I adapted <strong>Qwen&nbsp;3.6-27B</strong> with a parameter-efficient, multi-task <strong>QLoRA</strong> adapter so one model reads a crop and returns a structured verdict for each of eight artifact types. The best off-the-shelf open VLMs (Qwen&nbsp;3.6-27B, Gemma&nbsp;4-31B, and Muse-Glimmer-30B) all plateaued near <strong>0.25</strong> macro-F1 zero-shot, while fine-tuning reached <strong>0.49</strong> (about 2&times;), ahead of <strong>GPT-5.6-sol</strong> at 0.30, and learned subtle defects the base model missed entirely (teeth-colour F1 rose from 0.00 to 0.57). Around the model I added lightweight classical CV (variance-of-Laplacian sharpness, plate-difference maps, optical flow, and MediaPipe / InsightFace landmarks) for geometry and motion, gated so the VLM runs just five focused calls per frame. Alongside the QC model, I rebuilt <strong>Cropaway</strong>, the macOS <strong>SAM&nbsp;3</strong> masking tool artists use for every render, and shipped lip-sync ML edits across <strong>10+ production and demo titles</strong>.</p>
         </div>
         <div class="card">
           <h3>Slot4D: Object Slots for 4D Reconstruction</h3>
